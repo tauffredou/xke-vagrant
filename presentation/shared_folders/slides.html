@@ -1,0 +1,33 @@
+<section>
+    <section><h1>Dossiers partagés</h1></section>
+
+    <section>
+        <p>Par défaut, le répertoire contenant le fichier Vagrantfile est partagé dans la machine sur <b>/vagrant</b></p>
+        <pre><code data-trim data-noescape>
+vagrant@vagrant-ubuntu-trusty-64:~$ ls /vagrant/
+presentation  Vagrantfile  vagrant.iml
+vagrant@vagrant-ubuntu-trusty-64:~$
+        </code></pre>
+        <p>Performances faibles : <a target="_blank" href="http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines">benchmark</a></p>
+    </section>
+
+    <section>
+        <h2>Ajouter un répertoire partagé</h2>
+          <pre><code data-trim data-noescape>config.vm.synced_folder "/host/folder", "/guest/folder"</code></pre>
+    </section>
+
+    <section>
+        <h2>Alternatives</h2>
+        <ul>
+            <li>rsync</li>
+            <li>SMB</li>
+            <li>NFS</li>
+        </ul>
+    </section>
+
+    <section class="exercice" data-background="#254356">
+        <h2>Exercice</h2>
+        <p>Partagez votre clé ssh avec la machine vagrant sans la copier</p>
+    </section>
+
+</section>

@@ -1,0 +1,25 @@
+<section>
+
+    <section>
+        <h1>Configuration de la VM</h1>
+        <p>La plupart des configurations se font par provider</p>
+    </section>
+
+    <section>
+        <h1>Virtualbox</h1>
+        <pre><code data-trim data-noescape>
+config.vm.provider :virtualbox do |vb|
+   vb.customize ["modifyvm", :id, "--cpus", "2"]
+end
+        </code></pre>
+        <p>Il s'agit d'un wrapper à VBoxManage. Plus d'infos sur les options disponibles sur
+        <a href="https://www.virtualbox.org/manual/ch08.html">https://www.virtualbox.org/manual/ch08.html</a></p>
+    </section>
+
+    <section class="exercice" data-background="#254356">
+        <h2>Exercice</h2>
+        <p>Par défault, une machine est créée avec 512mo de mémoire et 1 cpu.</p>
+        <p>Modifiez la machine précédente pour lui attribuer 1go de ram</p>
+    </section>
+
+</section>

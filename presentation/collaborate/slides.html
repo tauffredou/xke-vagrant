@@ -1,0 +1,46 @@
+<section>
+    <section><h1>Un outil de collaboration</h1></section>
+
+    <section>
+        <h2>Créer une image</h2>
+        <p>Il est facile de créer une image de VM à partir de la machine actuelle...</b></p>
+        <pre><code data-trim data-noescape>vagrant package --base web --output web.box</code></pre>
+    </section>
+
+    <section>
+        <p>... et de la réutiliser</p>
+        <pre><code data-trim data-noescape>
+Vagrant.configure(2) do |config|
+    config.vm.box = "web"
+    config.vm.box_url = "file://web.box"
+end
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Donner un accès distant à son application</h2>
+        <p>Sur votre poste:</p>
+        <pre><code data-trim data-noescape>vagrant share --http 80</code></pre>
+        <p>De l'autre côté:</p>
+        <pre><code data-trim data-noescape>vagrant connect SHARE_NAME</code></pre>
+    </section>
+
+    <section>
+        <h2>Publier son image</h2>
+        <pre><code data-trim data-noescape>
+config.push.define "ftp" do |push|
+    push.host = "ftp.xebia.fr"
+end
+        </code></pre>
+    </section>
+
+    <section>
+        <pre><code data-trim data-noescape>vagrant push web</code></pre>
+    </section>
+
+    <section class="exercice" data-background="#254356">
+        <h2>Exercice</h2>
+        <p>Packagez un répertoire contenant les serveurs web et db, et le Vagrantfile permetttant de démarrer de façon autonome.</p>
+    </section>
+
+</section>

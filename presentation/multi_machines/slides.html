@@ -1,0 +1,36 @@
+<section>
+    <section><h1>Multi machines</h1></section>
+
+    <section>
+        <p>Vagrant permet de démarrer une architeture complète</p>
+        <pre><code data-trim data-noescape>
+Vagrant.configure("2") do |config|
+
+    config.vm.box = "ubuntu/trusty64"
+
+    config.vm.define "web" do |web|
+        web.vm.box = "nginx"
+        web.vm.network :private_network, ip: "192.168.13.37"
+    end
+
+    config.vm.define "db" do |db|
+        db.vm.box = "redis"
+        db.vm.network :private_network, ip: "192.168.13.38"
+    end
+end
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Démarrer les deux machines</h2>
+        <pre><code data-trim data-noescape>vagrant up</code></pre>
+        <h2>Démarrer une machine en particulier</h2>
+        <pre><code data-trim data-noescape>vagrant up db</code></pre>
+    </section>
+
+    <section>
+        <h2>Accès SSH à une machine en particulier</h2>
+        <pre><code data-trim data-noescape>vagrant ssh db</code></pre>
+    </section>
+
+</section>

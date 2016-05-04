@@ -1,0 +1,53 @@
+<section>
+    <section>
+        <h1>Ma première VM</h1>
+
+        <p>(Le provider sera VirtualBox)</p>
+    </section>
+
+    <section>
+        <p>Création d'une VM Ubuntu trusty 64 bits avec une configuration par défaut</p>
+         <pre><code data-trim data-noescape>vagrant init ubuntu/trusty64</code></pre>
+    </section>
+
+    <section>
+        <p>Lister les machines Vagrant existantes</p>
+        <pre><code data-trim data-noescape>vagrant global-status</code></pre>
+         <pre><code data-trim data-noescape>
+ id       name           provider   state    directory
+ -----------------------------------------------------------------------------------
+ f9c8e17  default        virtualbox running  /Users/thomas/xke/vagrant
+</code></pre>
+    </section>
+
+    <section>
+        <p>Connexion en ssh à la VM</p>
+         <pre><code data-trim data-noescape>vagrant ssh</code></pre>
+    </section>
+
+    <section>
+        <p>Eteindre la VM</p>
+        <pre><code data-trim data-noescape>vagrant halt</code></pre>
+    </section>
+
+    <section>
+        <p>Recharger la VM</p>
+        <pre><code data-trim data-noescape>vagrant reload</code></pre>
+    </section>
+
+    <section>
+        <p>Supprimer la VM</p>
+        <pre><code data-trim data-noescape>vagrant destroy</code></pre>
+    </section>
+
+</section>
+
+<section class="exercice" data-background="#254356">
+    <h2>Exercice</h2>
+    <p>Créez une machine sous <b>ubuntu</b> et installer <b>nginx</b></p>
+    <p>Pouvez-vous accéder à nginx à partir de l'ip de la machine ?</p>
+</section>
+
+<section>
+    <p>Par défault, les machines ne sont pas accessibles (même depuis la machine hôte)</p>
+</section>

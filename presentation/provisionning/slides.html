@@ -1,0 +1,52 @@
+<section>
+    <section><h1>Provisionning</h1></section>
+
+    <section>
+        <p>Le provionning est exécuté à la fin du vagrant init</p>
+        <p>Il n'est exécuté qu'une seul fois.</p>
+    </section>
+
+    <section>
+        <h2>Relancer un provisionning</h2>
+        <pre><code data-trim data-noescape>vagrant provision</code></pre>
+        <p>Tous les provisionning sont de nouveau exécutés.</p>
+    </section>
+
+    <section>
+        <h2>Shell</h2>
+        <div class="fragment">
+            <p >Inline</p>
+            <pre><code data-trim data-noescape>config.vm.provision "shell", inline: "echo Hello"</code></pre>
+        </div>
+
+        <div class="fragment">
+            <p>Presque inline</p>
+            <pre><code data-trim data-noescape>
+config.vm.provision "shell", inline: &lt;&lt;SCRIPT
+    echo Hello
+SCRIPT
+            </code></pre>
+        </div>
+
+        <div class="fragment">
+            <p>Script</p>
+            <pre><code data-trim data-noescape>config.vm.provision "shell", path: "install.sh"</code></pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ansible</h2>
+        <pre><code data-trim data-noescape>
+config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+end
+        </code></pre>
+    </section>
+
+    <section class="exercice" data-background="#254356">
+        <h2>Exercice</h2>
+        <p>Provisionnez nginx sur le serveur web</p>
+        <p>Provisionnez redis sur le serveur db</p>
+    </section>
+
+</section>
